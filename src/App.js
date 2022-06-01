@@ -2,7 +2,7 @@ import './App.css';
 import Nav from './Nav';
 import Shop from './Shop';
 import About from './About';
-import ItemDetail from './ItemDetails';
+import { ItemDetail } from './ItemDetails';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
             {/* [//<Route path="/" exact element={<Home />}></Route>] */}
             <Route path="/about" element={<About />} />
             <Route path="/shop" exact element={<Shop />} />
-            <Route path="/shop/:id" element={<ItemDetail />}/>
+            <Route path="/shop/:id" element={<ItemDetail />} />
           </Routes>
       </div>
     </Router>

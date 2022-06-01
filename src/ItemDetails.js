@@ -1,15 +1,26 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-
+import { useParams } from 'react-router-dom';
 
 
 function ItemDetail() {
 
     const [item, setItem] = useState([]);
 
-    const fetchItem = async () => {};
+    const { id } = useParams();
+    const itemID = id;
+    console.log(itemID);
 
-    useEffect(()=>{}, []);
+    const fetchItem = async () => {
+        const getItem = await fetch(`https://fakestoreapi.com/products/${itemID}`);
+        const item = await getItem.json();
+
+        console.log(item);
+    };
+
+    useEffect(()=>{
+        fetchItem();
+    }, []);
 
     
 
@@ -20,4 +31,4 @@ function ItemDetail() {
     );
 }
 
-export default ItemDetail;
+export { ItemDetail };

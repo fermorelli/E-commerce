@@ -2,8 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
-
-
 function Shop() {
 
     const [items, setItems] = useState([]);
@@ -19,15 +17,13 @@ function Shop() {
         fetchItems();
     }, []);
 
-    
-
     return (
         <div className="App">
             <h1>SHOP</h1>
             <div className="item-list">
                 {items.map((item)=>{
                     return (
-                    <li key={item.id}>
+                    <li key={item.id} className="li">
                         <Link to={`/shop/${item.id}`}>{item.title}</Link>
                     </li>
                     //<div key={item.id}>{item.image}</div>
