@@ -14,7 +14,7 @@ function ItemDetail() {
     const fetchItem = async () => {
         const getItem = await fetch(`https://fakestoreapi.com/products/${itemID}`);
         const item = await getItem.json();
-
+        setItem(item);
         console.log(item);
     };
 
@@ -26,7 +26,8 @@ function ItemDetail() {
 
     return (
         <div className="App">
-            <h1>Item</h1>
+            <h1>{item.title}</h1>
+            <img src={item.image} alt="item"></img>
         </div>
     );
 }

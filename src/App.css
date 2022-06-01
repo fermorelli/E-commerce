@@ -26,11 +26,14 @@ nav li{
 .item-list{
   background-color: #333;
   border-radius: 15px;
-  color: white;
+  text-decoration: none;
+  list-style: none;
+  color: white !important;
   margin: 0 auto;
   padding: 20px;
 }
 
 .li {
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }

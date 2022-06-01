@@ -23,7 +23,7 @@ function Shop() {
             <div className="item-list">
                 {items.map((item)=>{
                     return (
-                    <li key={item.id} className="li">
+                    <li key={item.id}>
                         <Link to={`/shop/${item.id}`}>{item.title}</Link>
                     </li>
                     //<div key={item.id}>{item.image}</div>
