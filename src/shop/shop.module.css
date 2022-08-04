@@ -1,0 +1,25 @@
+.all{
+    width: 80%;
+    margin: 50px auto;
+    background-color: #777;
+    border: 1px solid black;
+    padding-top: 0;
+}
+
+.all h1{
+    color: white;
+    text-align: center;
+    background-color: #444;
+    margin-top: 0;
+}
+
+.itemList{
+    list-style-type: none;
+    text-align: left;
+    margin-right: 25px;
+}
+
+.itemLink{
+    text-decoration: none;
+    color: white
+}
