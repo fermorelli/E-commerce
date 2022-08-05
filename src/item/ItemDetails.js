@@ -27,13 +27,12 @@ function ItemDetail() {
 
     return (
         <>
-        {fetching && (<p>...loading</p>)}
-            <div className={styles.itemCard}>
+        {fetching ? (<p>...loading</p>) : <div className={styles.itemCard}>
                 <h1>{item.title}</h1>
                 <img src={item.image} alt="item"></img>
                 <p>{item.description}</p>
                 <span>price ${item.price}</span>
-            </div>
+            </div>}
         </>
     );
 }

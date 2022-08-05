@@ -1,8 +1,6 @@
 .all{
     width: 80%;
     margin: 50px auto;
-    background-color: #777;
-    border: 1px solid black;
     padding-top: 0;
 }
 
@@ -21,5 +19,48 @@
 
 .itemLink{
     text-decoration: none;
-    color: white
+    color: #333;
+}
+
+.shopGrid{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.shopGrid img{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.itemCard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+}
+
+.itemCard h3{
+    font-size: 18px;
+    min-height: 75px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    font-weight: 200;
+    padding: 10px;
+    border-radius: 15px 0 15px 0;
+}
+
+.itemCard p {
+    margin-top: 70px;
+    font-size: 18px;
+}
+
+.itemCard img{
+    margin-top: 20px;
 }
