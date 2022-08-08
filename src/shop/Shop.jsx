@@ -26,27 +26,14 @@ function Shop() {
         {fetching && (<p>...loading</p>)}
             <div className={styles.all}>
                 <h1>SHOP</h1>
-                {/* <div>
-                    {items.map((item)=>{
-                        return (
-                            <ul className={styles.itemList}>
-                                <li key={item.id} className={styles.item}>
-                                    <Link className={styles.itemLink} to={`/shop/${item.id}`}>{item.title}</Link>
-                                </li>
-                            </ul>
-                        )
-                    })}
-                </div> */}
                 <div className={styles.shopGrid}>
                     {items.map((item)=>{
                         return (
-                            <div className={styles.itemCard}>
                                 <Link className={styles.itemLink} to={`/shop/${item.id}`}>
                                     <h3>{item.title}</h3>
                                     <img src={item.image} alt="item" />
                                     <p>${item.price}</p>
                                 </Link>
-                            </div>
                         )
                     })}
                 </div>
