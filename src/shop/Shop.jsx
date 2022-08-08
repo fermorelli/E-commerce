@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import styles from './shop.module.css';
+import { Loader } from '../loader/loader';
 
 
 function Shop() {
@@ -23,8 +24,7 @@ function Shop() {
 
     return (
        <>
-        {fetching && (<p>...loading</p>)}
-            <div className={styles.all}>
+        {fetching ? <Loader /> : <div className={styles.all}>
                 <h1>SHOP</h1>
                 <div className={styles.shopGrid}>
                     {items.map((item)=>{
@@ -37,7 +37,7 @@ function Shop() {
                         )
                     })}
                 </div>
-            </div>
+            </div>}
         </>
     );
 }

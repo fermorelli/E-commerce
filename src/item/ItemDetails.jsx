@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import styles from './item.module.css';
+import { Loader } from '../loader/loader';
+
 
 
 function ItemDetail() {
@@ -27,11 +29,14 @@ function ItemDetail() {
 
     return (
         <>
-        {fetching ? (<p>...loading</p>) : <div className={styles.itemCard}>
+        {fetching ? <Loader /> : <div className={styles.itemCard}>
                 <h1>{item.title}</h1>
                 <img src={item.image} alt="item"></img>
                 <p>{item.description}</p>
                 <span>price ${item.price}</span>
+                <Link to={'/shop'}>
+                    <button type="button" id={styles.button}>BACK</button>
+                </Link>
             </div>}
         </>
     );
