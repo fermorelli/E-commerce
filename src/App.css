@@ -2,38 +2,3 @@
   text-align: center;
   color: black;
 }
-
-nav{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: rgb(73, 79, 82);
-  color: white;
-}
-nav li{
-  color: white;
-}
-
-.nav-links{
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-
-.item-list{
-  background-color: #333;
-  border-radius: 15px;
-  text-decoration: none;
-  list-style: none;
-  color: white !important;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.li {
-  text-decoration: none !important;
-  color: white !important;
-}

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import styles from './shop.module.css';
 import { Loader } from '../loader/loader';
 
-
 function Shop() {
 
     const [items, setItems] = useState([]);
@@ -15,7 +14,6 @@ function Shop() {
         const items1 = await data.json();
         setItems(items1);
         isFetching(false);
-        console.log(items1);
     };
 
     useEffect(()=>{

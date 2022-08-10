@@ -5,14 +5,13 @@ import { Loader } from '../loader/loader';
 
 
 
-function ItemDetail() {
+const ItemDetail = ()=> {
 
     const [item, setItem] = useState([]);
     const [fetching, isFetching] = useState(false);
 
     const { id } = useParams();
     const itemID = id;
-    console.log(itemID);
 
     const fetchItem = async () => {
         isFetching(true);
@@ -20,8 +19,11 @@ function ItemDetail() {
         const item = await getItem.json();
         setItem(item);
         isFetching(false);
-        console.log(item);
     };
+
+    const value = item?.rating?.rate;
+    console.log('value: ', value);
+
 
     useEffect(()=>{
         fetchItem();
@@ -34,6 +36,16 @@ function ItemDetail() {
                 <img src={item.image} alt="item"></img>
                 <p>{item.description}</p>
                 <span>price ${item.price}</span>
+                <div className={styles.rating}>{[1,2,3,4,5].map((rate)=>(<span>
+                                        <i style={{ color: "black"}} className={
+                                            value + 1 === rate + 0.5
+                                            ? "fa-regular fa-star-half-stroke"
+                                            : value >= rate
+                                            ? "fa-solid fa-star"
+                                            : "fa-regular fa-star"
+                                            }
+                                            />
+                                    </span>))}</div>
                 <Link to={'/shop'}>
                     <button type="button" id={styles.button}>BACK</button>
                 </Link>
@@ -42,4 +54,4 @@ function ItemDetail() {
     );
 }
 
-export { ItemDetail };
+export default ItemDetail;
