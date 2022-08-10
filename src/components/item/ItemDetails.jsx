@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import styles from './item.module.css';
 import { Loader } from '../loader/loader';
+import CartContext from '../../context/cart/CartContext';
 
 
 
 const ItemDetail = ()=> {
-
+    const { addToCart } = useContext(CartContext);
     const [item, setItem] = useState([]);
     const [fetching, isFetching] = useState(false);
 
@@ -45,10 +46,15 @@ const ItemDetail = ()=> {
                                             : "fa-regular fa-star"
                                             }
                                             />
-                                    </span>))}</div>
-                <Link to={'/shop'}>
-                    <button type="button" id={styles.button}>BACK</button>
-                </Link>
+                                    </span>))}
+                </div>
+                <div className={styles.buttonContainer}>
+                    <button id={styles.button} onClick={() => addToCart(item)}>ADD TO CART</button>
+                    <Link to={'/shop'}>
+                        <button type="button" id={styles.button}>BACK</button>
+                    </Link>
+                </div>
+
             </div>}
         </>
     );
