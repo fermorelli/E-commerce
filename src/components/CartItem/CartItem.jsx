@@ -11,7 +11,9 @@ const CartItem = ({ item }) => {
             <div>
                 {item.name}${item.price}
             </div>
-            <button onClick={()=>removeItem(item.id)}>remove</button>
+            <button onClick={()=>removeItem(item.id)}>
+                <i className="fa-solid fa-x" ></i>
+            </button>
         </li>
     )
 }

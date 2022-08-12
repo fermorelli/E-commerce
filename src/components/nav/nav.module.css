@@ -17,3 +17,21 @@ nav{
     align-items: center;
     list-style: none;
   }
+
+  .cart{
+    justify-self: flex-end;
+  }
+
+  .cartCounter {
+    position: relative;
+    bottom: 40px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    text-align: center;
+  }

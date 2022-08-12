@@ -24,9 +24,12 @@
   .cartItem button {
     margin-left: auto;
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+    transform: scale(0.6);
+    background-color: #333;
+    color: white;
   }
 
   .cartItem button:focus,

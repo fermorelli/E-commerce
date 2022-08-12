@@ -18,10 +18,14 @@ function Nav() {
             <li>Shop</li>
             </Link>
         </ul>
-        <i className="fa-solid fa-shopping-cart" onClick={showHideCart}></i>
-        { cartItems.length > 0 && <div className={styles.itemCount}>
-          <span>{cartItems.length}</span>
-          </div>}
+        <div className={styles.cart}>
+          <i className="fa-solid fa-shopping-cart" onClick={showHideCart}></i>
+          { cartItems.length > 0 && <div className={styles.itemCount}>
+            <div className={styles.cartCounter}>
+              <span>{cartItems.length}</span>
+            </div>
+            </div>}
+        </div>
     </nav>
   );
 }
