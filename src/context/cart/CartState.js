@@ -1,16 +1,25 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from './CartReducer';
 import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM} from '../Types';
 
 const CartState = ({children}) => {
 
+    const localStorageCart = JSON.parse(localStorage.getItem("cart"));
+
+    console.log("cart: ", localStorageCart);
+
     const initialState = {
         showCart: false,
-        cartItems: []
+        cartItems: [localStorageCart]
     };
 
     const [state, dispatch] = useReducer(CartReducer, initialState);
+
+    useEffect(()=>{
+        localStorage.setItem("cart", JSON.stringify(state.cartItems))
+    }, [state.cartItems])
+
 
     const addToCart = item => {
         dispatch({type: ADD_TO_CART, payload: item})

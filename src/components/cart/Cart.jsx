@@ -5,9 +5,6 @@ import CartItem from "../CartItem/CartItem";
 
 const Cart = () => {
     const { showCart, cartItems, showHideCart } = useContext(CartContext);
-
-
-
     return (
         <>
             {showCart && (
