@@ -6,9 +6,12 @@ nav{
     min-height: 10vh;
     background: rgb(73, 79, 82);
     color: white;
+    text-decoration: none;
+    text-transform: uppercase;
   }
   nav li{
     color: white;
+    text-decoration: none;
   }
   .navLinks{
     width: 40%;
@@ -16,6 +19,12 @@ nav{
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    text-decoration: none;
+  }
+
+  .navLinks a{
+    text-decoration: none;
+    font-weight: 600;
   }
 
   .cart{
@@ -23,9 +32,9 @@ nav{
   }
 
   .cartCounter {
-    position: relative;
-    bottom: 40px;
-    left: 15px;
+    position: absolute;
+    top: 40px;
+    right: 150px;
     display: flex;
     justify-content: center;
     align-items: center;

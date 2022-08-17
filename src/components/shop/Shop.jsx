@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import styles from './shop.module.css';
 import { Loader } from '../loader/loader';
+import CartContext from '../../context/cart/CartContext';
+import { useContext } from 'react';
 
 function Shop() {
-
+    const { addToCart } = useContext(CartContext);
     const [items, setItems] = useState([]);
     const [fetching, isFetching] = useState(false);
 
@@ -27,11 +29,16 @@ function Shop() {
                 <div className={styles.shopGrid}>
                     {items.map((item)=>{
                         return (
-                                <Link className={styles.itemLink} to={`/shop/${item.id}`}>
+                            <div className={styles.itemLink}>
+                                <Link className={styles.routes} to={`/shop/${item.id}`}>
                                     <h3>{item.title}</h3>
                                     <img src={item.image} alt="item" />
                                     <p>${item.price}</p>
                                 </Link>
+                                <div className={styles.addCart}>
+                                    <i id={styles.add}className='fa-solid fa-shopping-cart' onClick={()=> addToCart(item)} />
+                                </div>
+                            </div>
                         )
                     })}
                 </div>

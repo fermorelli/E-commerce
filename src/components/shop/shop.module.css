@@ -20,7 +20,7 @@
 .itemLink{
     text-decoration: none;
     color: #333;
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 2px;
     display: grid;
     justify-items: center;
@@ -36,8 +36,26 @@
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(11, 200px);
+    grid-template-rows: repeat(11, 230px);
     grid-gap: 10px;
+    text-decoration: none;
+}
+
+.addCart{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.shopGrid a{
+    text-decoration: none;
+    color: #333;
 }
 
 .itemLink:nth-child(1){
@@ -173,8 +191,6 @@
 
 .itemLink:nth-child(1) img,
 .itemLink:nth-child(2) img,
-.itemLink:nth-child(3) img,
-.itemLink:nth-child(4) img,
 .itemLink:nth-child(15) img,
 .itemLink:nth-child(16) img,
 .itemLink:nth-child(17) img,
@@ -184,8 +200,13 @@
     height: 250px;
 }
 
-.shopGrid img{
+.shopGrid img:not(.itemLink:nth-child(3) img, .itemLink:nth-child(4) img){
     max-width: 50%;
+}
+
+.itemLink:nth-child(3) img,
+.itemLink:nth-child(4) img{
+    height: 275px;
 }
 
 .shopGrid h3{

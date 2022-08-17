@@ -11,14 +11,6 @@ const ItemDetail = ()=> {
     const [item, setItem] = useState([]);
     const [fetching, isFetching] = useState(false);
 
-    const showAlert = () => {
-        return (
-            <div className={styles.alert}>
-                <span>`Item successfully added`</span>
-            </div>
-        )
-    }
-
     const { id } = useParams();
     const itemID = id;
 
