@@ -4,7 +4,7 @@ import CartContext from "../../context/cart/CartContext";
 import CartItem from "../CartItem/CartItem";
 
 const Cart = () => {
-    const { showCart, cartItems, showHideCart } = useContext(CartContext);
+    const { showCart, cartItems, showHideCart, clearCart } = useContext(CartContext);
     return (
         <>
             {showCart && (
@@ -31,9 +31,12 @@ const Cart = () => {
                         <div>Cart Total</div>
                         <div></div>
                         <div style={{ marginLeft: 5 }}>
-                            {cartItems.reduce((amount, item) => item.price + amount, 0)}
+                            ${cartItems.reduce((amount, item) => item.price + amount, 0)}
                         </div>
                     </div>
+                    <button id={styles.button} onClick={()=>{
+                        clearCart();
+                    }}>Clear</button>
                 </div>
                 </>
             )}

@@ -1,24 +1,26 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from './CartReducer';
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM} from '../Types';
+import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, CLEAR_CART } from '../Types';
 
 const CartState = ({children}) => {
 
-    const localStorageCart = JSON.parse(localStorage.getItem("cart"));
+    // const localStorageCart = JSON.parse(localStorage.getItem("cart"));
 
-    console.log("cart: ", localStorageCart);
+    // if (localStorageCart===null){
+    //     window.localStorage.clear();
+    // }
 
     const initialState = {
         showCart: false,
-        cartItems: [localStorageCart]
+        cartItems: []
     };
 
     const [state, dispatch] = useReducer(CartReducer, initialState);
 
-    useEffect(()=>{
-        localStorage.setItem("cart", JSON.stringify(state.cartItems))
-    }, [state.cartItems])
+    // useEffect(()=>{
+    //     localStorage.setItem("cart", JSON.stringify(state.cartItems))
+    // }, [state.cartItems])
 
 
     const addToCart = item => {
@@ -33,6 +35,10 @@ const CartState = ({children}) => {
         dispatch({type: REMOVE_ITEM, payload: id})
     };
 
+    const clearCart = () => {
+        dispatch({type: CLEAR_CART, payload: []})
+    }
+
     return (
         <CartContext.Provider value={{
             showCart: state.showCart,
@@ -40,6 +46,7 @@ const CartState = ({children}) => {
             addToCart,
             showHideCart,
             removeItem,
+            clearCart,
         }}>{children}</CartContext.Provider>
     )
 }

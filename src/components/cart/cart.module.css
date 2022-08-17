@@ -9,6 +9,7 @@
     border: 1px solid gray;
     padding: 10px;
     z-index: 10;
+    text-transform: uppercase;
   }
 
   .cartInnerWrapper {
@@ -24,10 +25,28 @@
     justify-content: space-between;
   }
 
+  #button{
+    margin-top: 20px;
+    border: 1px solid;
+    background-color: #333;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transform: scale(0.9);
+  }
+  #button:hover{
+      transform: scale(1.0);
+  }
+  #button:active{
+      background-color: orange;
+  }
+
   @media screen and (max-width: 1600px) {
     .cartWrapper{
       width: 250px;
       right: 40px;
     }
-    
   }

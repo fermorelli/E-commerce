@@ -11,6 +11,14 @@ const ItemDetail = ()=> {
     const [item, setItem] = useState([]);
     const [fetching, isFetching] = useState(false);
 
+    const showAlert = () => {
+        return (
+            <div className={styles.alert}>
+                <span>`Item successfully added`</span>
+            </div>
+        )
+    }
+
     const { id } = useParams();
     const itemID = id;
 
@@ -32,30 +40,35 @@ const ItemDetail = ()=> {
 
     return (
         <>
-        {fetching ? <Loader /> : <div className={styles.itemCard}>
-                <h1>{item.title}</h1>
+        {fetching ? <Loader /> :
+        <div className={styles.itemCard}>
+            <h1>{item.title}</h1>
+            <div className={styles.rest}>
                 <img src={item.image} alt="item"></img>
-                <p>{item.description}</p>
-                <span>price ${item.price}</span>
-                <div className={styles.rating}>{[1,2,3,4,5].map((rate)=>(<span>
-                                        <i style={{ color: "black"}} className={
-                                            value + 1 === rate + 0.5
-                                            ? "fa-regular fa-star-half-stroke"
-                                            : value >= rate
-                                            ? "fa-solid fa-star"
-                                            : "fa-regular fa-star"
-                                            }
-                                            />
-                                    </span>))}
+                <div className={styles.description}>
+                    <p>{item.description}</p>
+                    <span>price ${item.price}</span>
+                    <div className={styles.rating}>{[1,2,3,4,5].map((rate)=>(
+                        <span>
+                            <i style={{ color: "black"}} className={
+                                value + 1 === rate + 0.5
+                                ? "fa-regular fa-star-half-stroke"
+                                : value >= rate
+                                ? "fa-solid fa-star"
+                                : "fa-regular fa-star"}/>
+                        </span>))}
+                    </div>
+                    <div className={styles.buttonContainer}>
+                        <button id={styles.button} onClick={() => {
+                            addToCart(item);
+                            }}>ADD TO CART</button>
+                        <Link to={'/shop'}>
+                            <button type="button" id={styles.button}>BACK</button>
+                        </Link>
+                    </div>
                 </div>
-                <div className={styles.buttonContainer}>
-                    <button id={styles.button} onClick={() => addToCart(item)}>ADD TO CART</button>
-                    <Link to={'/shop'}>
-                        <button type="button" id={styles.button}>BACK</button>
-                    </Link>
-                </div>
-
-            </div>}
+            </div>
+        </div>}
         </>
     );
 }
