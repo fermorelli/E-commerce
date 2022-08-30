@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styles from './checkout.module.css';
 import CartItem from '../CartItem/CartItem';
 import CartContext from '../../context/cart/CartContext';
+import { Modal } from '../modal/modal';
 
 const Checkout = ()=>{
     const { cartItems, clearCart } = useContext(CartContext);
+    const [ isOpen, setIsOpen ] = useState(false);
 
     return (
         <div>
@@ -25,7 +27,8 @@ const Checkout = ()=>{
                 </p>
             </div>
             <button className={styles.button} onClick={()=>clearCart()}>clear cart</button>
-            <button className={styles.button}>Proceed to payment</button>
+            <button className={cartItems.length > 0 ? styles.button : styles.none} onClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</button>
+            {isOpen && <Modal setIsOpen={setIsOpen} />}
         </div>
     )
 }
