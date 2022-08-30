@@ -1,7 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useContext } from 'react';
 import styles from './checkout.module.css';
-import { Loader } from '../loader/loader';
 import CartItem from '../CartItem/CartItem';
 import CartContext from '../../context/cart/CartContext';
 
@@ -18,6 +16,16 @@ const Checkout = ()=>{
                 ))}
                 </ul>
             </div>
+            <div className={styles.cartTotal}>
+                <h3>
+                    Cart Total
+                </h3>
+                <p>
+                    ${cartItems.reduce((amount, item) => item.price + amount, 0)}
+                </p>
+            </div>
+            <button className={styles.button} onClick={()=>clearCart()}>clear cart</button>
+            <button className={styles.button}>Proceed to payment</button>
         </div>
     )
 }

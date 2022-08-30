@@ -33,7 +33,7 @@ function Shop() {
                         return (
                             <div className={styles.itemLink}>
                                 <Link className={styles.routes} to={`/shop/${item.id}`}>
-                                    <h3>{item.title}</h3>
+                                    <h3>{item.title.substring(0, 55)}</h3>
                                     <img src={item.image} alt="item" />
                                     <p>${item.price}</p>
                                 </Link>
