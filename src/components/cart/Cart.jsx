@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styles from './cart.module.css';
 import CartContext from "../../context/cart/CartContext";
 import CartItem from "../CartItem/CartItem";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const { showCart, cartItems, showHideCart, clearCart } = useContext(CartContext);
@@ -37,6 +38,9 @@ const Cart = () => {
                     <button id={styles.button} onClick={()=>{
                         clearCart();
                     }}>Clear</button>
+                    <Link to={"/checkout"}>
+                        <button id={styles.button} onClick={showHideCart}>Checkout</button>
+                    </Link>
                 </div>
                 </>
             )}

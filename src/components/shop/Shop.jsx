@@ -16,7 +16,9 @@ function Shop() {
         const items1 = await data.json();
         setItems(items1);
         isFetching(false);
+        console.log(items1);
     };
+
 
     useEffect(()=>{
         fetchItems();

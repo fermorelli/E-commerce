@@ -23,8 +23,6 @@ const ItemDetail = ()=> {
     };
 
     const value = item?.rating?.rate;
-    console.log('value: ', value);
-
 
     useEffect(()=>{
         fetchItem();

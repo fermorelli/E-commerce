@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
         <li className={styles.cartItem}>
             <img src={item.image} alt="" />
             <div>
-                {item.name}${item.price}
+                {item.title}${item.price}
             </div>
             <button onClick={()=>removeItem(item.id)}>
                 <i className="fa-solid fa-x" ></i>
