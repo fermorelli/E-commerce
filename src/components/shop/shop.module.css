@@ -11,7 +11,13 @@
     margin-top: 0;
 }
 
-.itemList{
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* .itemList{
     list-style-type: none;
     text-align: left;
     margin-right: 25px;
@@ -41,17 +47,7 @@
     text-decoration: none;
 }
 
-.addCart{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #333;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
+
 
 .shopGrid a{
     text-decoration: none;
@@ -246,4 +242,4 @@
         justify-content: space-around;
     }
 
-}
+} */

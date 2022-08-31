@@ -35,13 +35,17 @@ const Cart = () => {
                             ${cartItems.reduce((amount, item) => item.price + amount, 0)}
                         </div>
                     </div>
-                    <button id={styles.button} onClick={()=>{
-                        clearCart();
-                    }}>Clear</button>
-                    <Link to={"/checkout"}>
-                        <button id={styles.button} onClick={showHideCart}>Checkout</button>
-                    </Link>
-                </div>
+                    {cartItems.length > 0 ?
+                        <button className={styles.button} onClick={clearCart}>
+                            Clear
+                        </button> : null}
+                    {cartItems.length > 0 ?
+                        <Link to={"/checkout"}>
+                            <button className={styles.button} onClick={showHideCart}>
+                                Checkout
+                            </button>
+                        </Link> : null}
+                    </div>
                 </>
             )}
         </>

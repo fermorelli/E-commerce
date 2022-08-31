@@ -4,6 +4,7 @@ import styles from './shop.module.css';
 import { Loader } from '../loader/loader';
 import CartContext from '../../context/cart/CartContext';
 import { useContext } from 'react';
+import ShopItem from '../shopItem/shopItems';
 
 function Shop() {
     const { addToCart } = useContext(CartContext);
@@ -25,22 +26,13 @@ function Shop() {
     }, []);
 
     return (
-       <>
+    <>
         {fetching ? <Loader /> : <div className={styles.all}>
                 <h1>SHOP</h1>
-                <div className={styles.shopGrid}>
+                <div className={styles.shop}>
                     {items.map((item)=>{
                         return (
-                            <div className={styles.itemLink}>
-                                <Link className={styles.routes} to={`/shop/${item.id}`}>
-                                    <h3>{item.title.substring(0, 55)}</h3>
-                                    <img src={item.image} alt="item" />
-                                    <p>${item.price}</p>
-                                </Link>
-                                <div className={styles.addCart}>
-                                    <i id={styles.add}className='fa-solid fa-shopping-cart' onClick={()=> addToCart(item)} />
-                                </div>
-                            </div>
+                            <ShopItem key={item._id} item={item}/>
                         )
                     })}
                 </div>

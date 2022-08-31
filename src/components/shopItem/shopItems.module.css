@@ -1,0 +1,47 @@
+.all{
+    text-decoration: none;
+    color: black;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.all:hover{
+    transform: scale(1.01);
+}
+
+.routes{
+    text-decoration: none;
+    color: black;
+}
+
+.shopItem img{
+    width: 25%;
+    height: 25%;
+}
+
+.shopItem{
+    display: flex;
+}
+
+.itemDescription{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.addCart{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: flex-end;
+}

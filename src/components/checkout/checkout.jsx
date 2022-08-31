@@ -26,7 +26,7 @@ const Checkout = ()=>{
                     ${cartItems.reduce((amount, item) => item.price + amount, 0)}
                 </p>
             </div>
-            <button className={styles.button} onClick={()=>clearCart()}>clear cart</button>
+            <button className={cartItems.length > 0 ? styles.button : styles.none} onClick={()=> cartItems.length > 0 ? clearCart():null}>clear cart</button>
             <button className={cartItems.length > 0 ? styles.button : styles.none} onClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</button>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
         </div>
