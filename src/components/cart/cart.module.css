@@ -4,10 +4,10 @@
     height: fit-content;
     top: 60px;
     right: 150px;
-    border-radius: 12px;
+    border-radius: 5px;
     background-color: white;
     border: 1px solid gray;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     z-index: 401;
     text-transform: uppercase;
   }

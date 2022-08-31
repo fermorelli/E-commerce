@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
 import styles from './shop.module.css';
 import { Loader } from '../loader/loader';
-import CartContext from '../../context/cart/CartContext';
-import { useContext } from 'react';
 import ShopItem from '../shopItem/shopItems';
 
 function Shop() {
-    const { addToCart } = useContext(CartContext);
     const [items, setItems] = useState([]);
     const [fetching, isFetching] = useState(false);
 
@@ -28,7 +24,6 @@ function Shop() {
     return (
     <>
         {fetching ? <Loader /> : <div className={styles.all}>
-                <h1>SHOP</h1>
                 <div className={styles.shop}>
                     {items.map((item)=>{
                         return (

@@ -2,12 +2,11 @@
     text-decoration: none;
     color: black;
     width: 40%;
-    border: 1px solid;
-    border-radius: 5px;
     margin: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
 }
 
 .all:hover{
@@ -26,6 +25,7 @@
 
 .shopItem{
     display: flex;
+    align-items: center;
 }
 
 .itemDescription{
@@ -44,4 +44,34 @@
     justify-content: center;
     cursor: pointer;
     align-self: flex-end;
+}
+
+@media screen and (max-width: 767px) {
+    .all{
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        overflow-x: auto;
+        padding-right: 20px;
+    }
+
+    .shopItem img{
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .all{
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        overflow-x: auto;
+        padding-right: 20px;
+    }
+
+    .shopItem img{
+        width: 40%;
+        height: 40%;
+    }
 }

@@ -1,14 +1,7 @@
 .all{
     width: 80%;
-    margin: 150px auto;
+    margin: 0 auto;
     padding-top: 0;
-}
-
-.all h1{
-    color: white;
-    text-align: center;
-    background-color: #444;
-    margin-top: 0;
 }
 
 .shop{
