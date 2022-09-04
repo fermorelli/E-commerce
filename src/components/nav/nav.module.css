@@ -8,7 +8,8 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background: rgb(73, 79, 82);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,9,121,1) 35%, rgba(175,0,255,1) 100%);
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -34,16 +35,16 @@ nav{
 
   .cart{
     justify-self: flex-end;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .cartCounter {
-    position: absolute;
-    top: 40px;
-    right: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
+    margin-bottom: 30px;
+    background-color: #E71D36;
     width: 25px;
     height: 25px;
     border-radius: 12.5px;

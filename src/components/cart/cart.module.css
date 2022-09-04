@@ -54,7 +54,7 @@
       transform: scale(1.0);
   }
   .button:active{
-      background-color: orange;
+      background-color: #F46036;
   }
 
   @media screen and (max-width: 1600px) {
