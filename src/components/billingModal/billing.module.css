@@ -109,3 +109,8 @@
     display: flex;
     flex-direction: column;
   }
+
+  .countrySelect select{
+    width: 100%;
+    height: 25px;
+  }

@@ -20,7 +20,7 @@ const Checkout = ()=>{
                 </ul>
             </div>
             <div className={styles.cartTotal}>
-                <span>Add billing info</span>
+                <span>Add billing and shipping info</span>
                 <button className={styles.billingButton} onClick={()=> cartItems.length > 0 ? setIsOpen(true):null}>
                     <i className="fa-solid fa-plus"></i>
                     <i className="fa-solid fa-house"></i>
