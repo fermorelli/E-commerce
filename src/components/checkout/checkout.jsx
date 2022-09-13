@@ -13,7 +13,7 @@ const Checkout = ()=>{
 
     return (
         <div>
-            <h1>Checkout</h1>
+            <h1 id={styles.h1}>Checkout</h1>
             <div>
                 <ul>
                 {cartItems.map((item)=> (

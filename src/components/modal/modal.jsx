@@ -2,6 +2,7 @@ import styles from './modal.module.css';
 import { appendErrors, useForm } from 'react-hook-form';
 import { schema } from './validations';
 import { joiResolver } from '@hookform/resolvers/joi';
+import { Button } from '../button/button';
 
 export const Modal = ({ setIsOpen })=>{
 
@@ -12,6 +13,7 @@ export const Modal = ({ setIsOpen })=>{
 
     const onSubmit = (data) => {
         console.log(data);
+        alert('asd');
     };
 
     return (
@@ -26,34 +28,34 @@ export const Modal = ({ setIsOpen })=>{
                             </button>
                         </div>
                         <div className={styles.modalBody}>
-                            <form onSubmit={handleSubmit(onSubmit)} action="" className={styles.modalForm}>
+                            <form onSubmit={handleSubmit(onSubmit)} className={styles.modalForm}>
                                 <div className={styles.checkbox}>
                                     <div className={styles.select}>
                                         <label htmlFor="">Payment method</label>
-                                        <select {...register('payment')} htmlFor="">
+                                        <select {...register('payment')} name="payment" htmlFor="">
                                             <option name="pay" value="credit">Credit</option>
                                             <option name="pay" value="debit">Debit</option>
                                         </select>
                                     </div>
                                 </div>
                                 <label htmlFor="">Card Number</label>
-                                <input type="number" {...register('cardNumber')} error={appendErrors.cardNumber?.message}/>
+                                <input type="number" {...register('cardNumber')} name="cardNumber" error={appendErrors.cardNumber?.message}/>
                                     {errors.cardNumber && <span>{errors.cardNumber?.message}</span>}
                                 <label htmlFor="">Expire date</label>
-                                <input type="text" {...register('expireDate')} error={appendErrors.expireDate?.message}/>
+                                <input type="text" {...register('expireDate')} name="expireDate" error={appendErrors.expireDate?.message}/>
                                     {errors.expireDate && <span>{errors.expireDate?.message}</span>}
                                 <label htmlFor="">Security code</label>
-                                <input type="number" {...register('code')} error={appendErrors.code?.message}/>
+                                <input type="number" {...register('code')} name="code" error={appendErrors.code?.message}/>
                                     {errors.code && <span>{errors.code?.message}</span>}
                                     <label htmlFor="">Zip code</label>
-                                <input type="number" {...register('zipCode')} error=        {appendErrors.zipCode?.message}/>
+                                <input type="number" {...register('zipCode')} name="zipCode" error={appendErrors.zipCode?.message}/>
                                     {errors.zipCode && <span>{errors.zipCode?.message}</span>}
                                 <h5 className={styles.address}>Add shipment address</h5>
                                 <label htmlFor="">Address</label>
-                                <input type="text" {...register('address')} error={appendErrors.address?.message}/>
+                                <input type="text" {...register('address')} name="address" error={appendErrors.address?.message}/>
                                     {errors.address && <span>{errors.address?.message}</span>}
                                 <label htmlFor="">City</label>
-                                <input type="text" {...register('city')} error={appendErrors.city?.message}/>
+                                <input type="text" {...register('city')} name="city" error={appendErrors.city?.message}/>
                                     {errors.city && <span>{errors.city?.message}</span>}
                                 <div className={styles.countrySelect}>
                                     <label htmlFor="">Country</label>
@@ -313,7 +315,7 @@ export const Modal = ({ setIsOpen })=>{
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
-                                <input type="submit" className={styles.button} value="pay" />
+                                <Button action="submit" type="submit" handleClick={(e)=> {e.preventDefault(); onSubmit()}} value="pay" />
                             </form>
                         </div>
                     </div>
