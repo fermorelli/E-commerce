@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import styles from './item.module.css';
 import { Loader } from '../loader/loader';
 import CartContext from '../../context/cart/CartContext';
+import { Button } from '../button/button';
 
 
 
@@ -49,11 +50,11 @@ const ItemDetail = ()=> {
                         </span>))}
                     </div>
                     <div className={styles.buttonContainer}>
-                        <button id={styles.button} onClick={() => {
+                        <Button handleClick={() => {
                             addToCart(item);
-                            }}>ADD TO CART</button>
+                            }}>ADD TO CART</Button>
                         <Link to={'/shop'}>
-                            <button type="button" id={styles.button}>BACK</button>
+                            <Button>BACK</Button>
                         </Link>
                     </div>
                 </div>

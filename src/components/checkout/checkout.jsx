@@ -4,10 +4,13 @@ import CartItem from '../CartItem/CartItem';
 import CartContext from '../../context/cart/CartContext';
 import { Modal } from '../modal/modal';
 import { BillingModal } from '../billingModal/billingModal';
+import { Button } from '../button/button';
 
 const Checkout = ()=>{
     const { cartItems, clearCart } = useContext(CartContext);
     const [ isOpen, setIsOpen ] = useState(false);
+    const total = cartItems.reduce((amount, item) => item.price + amount, 0);
+    const totalFormatted = total.toFixed(2);
 
     return (
         <div>
@@ -29,11 +32,11 @@ const Checkout = ()=>{
                     Cart Total
                 </h3>
                 <p>
-                    ${cartItems.reduce((amount, item) => item.price + amount, 0)}
+                    ${totalFormatted}
                 </p>
             </div>
-            <button className={cartItems.length > 0 ? styles.button : styles.none} onClick={()=> cartItems.length > 0 ? clearCart():null}>clear cart</button>
-            <button className={cartItems.length > 0 ? styles.button : styles.none} onClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</button>
+            <Button handleClick={()=> cartItems.length > 0 ? clearCart():null}>clear cart</Button>
+            <Button handleClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</Button>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
             {isOpen && <BillingModal setIsOpen={setIsOpen} />}
         </div>

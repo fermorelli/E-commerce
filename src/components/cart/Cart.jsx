@@ -3,9 +3,12 @@ import styles from './cart.module.css';
 import CartContext from "../../context/cart/CartContext";
 import CartItem from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
+import { Button } from "../button/button";
 
 const Cart = () => {
     const { showCart, cartItems, showHideCart, clearCart } = useContext(CartContext);
+    const total = cartItems.reduce((amount, item) => item.price + amount, 0);
+    const totalFormatted = total.toFixed(2);
     return (
         <>
             {showCart && (
@@ -32,18 +35,18 @@ const Cart = () => {
                         <div>Cart Total</div>
                         <div></div>
                         <div style={{ marginLeft: 5 }}>
-                            ${cartItems.reduce((amount, item) => item.price + amount, 0)}
+                            ${totalFormatted}
                         </div>
                     </div>
                     {cartItems.length > 0 ?
-                        <button className={styles.button} onClick={clearCart}>
+                        <Button handleClick={clearCart}>
                             Clear
-                        </button> : null}
+                        </Button> : null}
                     {cartItems.length > 0 ?
                         <Link to={"/checkout"}>
-                            <button className={styles.button} onClick={showHideCart}>
+                            <Button handleClick={showHideCart}>
                                 Checkout
-                            </button>
+                            </Button>
                         </Link> : null}
                     </div>
                 </>

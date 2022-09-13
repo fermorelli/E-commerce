@@ -1,7 +1,7 @@
 import styles from './modal.module.css';
 import { appendErrors, useForm } from 'react-hook-form';
 import { schema } from './validations';
-import { joiResolver } from '@hookform/resolvers/joi'
+import { joiResolver } from '@hookform/resolvers/joi';
 
 export const Modal = ({ setIsOpen })=>{
 
