@@ -1,7 +1,7 @@
 .darkBG {
     background-color: rgba(0, 0, 0, 0.2);
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     z-index: 410;
     top: 50%;
     left: 50%;
@@ -18,8 +18,8 @@
   }
 
   .modal {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: auto;
     background: white;
     color: white;
     z-index: 500;
@@ -34,8 +34,12 @@
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 20px;
+  }
+
+  .modalHeader button {
+    margin-right: 30px;
   }
 
   .heading {
@@ -45,6 +49,16 @@
     font-weight: 500;
     font-size: 18px;
     text-align: center;
+    margin-left: 40px;
+  }
+
+  .address{
+    margin: 1px;
+    padding-top: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 20px 0;
   }
 
   .closeBtn{
@@ -82,7 +96,7 @@
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    margin: 30px auto 0;
+    margin: 30px auto 50px;
     transform: scale(0.9);
     width: 50%;
     text-align: center;
@@ -108,4 +122,8 @@
   .select{
     display: flex;
     flex-direction: column;
+  }
+  .countrySelect select{
+    width: 100%;
+    height: 25px;
   }

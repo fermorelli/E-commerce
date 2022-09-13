@@ -3,7 +3,6 @@ import styles from './checkout.module.css';
 import CartItem from '../CartItem/CartItem';
 import CartContext from '../../context/cart/CartContext';
 import { Modal } from '../modal/modal';
-import { BillingModal } from '../billingModal/billingModal';
 import { Button } from '../button/button';
 
 const Checkout = ()=>{
@@ -23,11 +22,6 @@ const Checkout = ()=>{
                 </ul>
             </div>
             <div className={styles.cartTotal}>
-                <span>Add billing and shipping info</span>
-                <button className={styles.billingButton} onClick={()=> cartItems.length > 0 ? setIsOpen(true):null}>
-                    <i className="fa-solid fa-plus"></i>
-                    <i className="fa-solid fa-house"></i>
-                </button>
                 <h3>
                     Cart Total
                 </h3>
@@ -38,7 +32,6 @@ const Checkout = ()=>{
             <Button handleClick={()=> cartItems.length > 0 ? clearCart():null}>clear cart</Button>
             <Button handleClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</Button>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
-            {isOpen && <BillingModal setIsOpen={setIsOpen} />}
         </div>
     )
 }
