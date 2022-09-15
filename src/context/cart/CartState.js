@@ -5,23 +5,12 @@ import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, CLEAR_CART } from '../Types';
 
 const CartState = ({children}) => {
 
-    // const localStorageCart = JSON.parse(localStorage.getItem("cart"));
-
-    // if (localStorageCart===null){
-    //     window.localStorage.clear();
-    // }
-
     const initialState = {
         showCart: false,
         cartItems: []
     };
 
     const [state, dispatch] = useReducer(CartReducer, initialState);
-
-    // useEffect(()=>{
-    //     localStorage.setItem("cart", JSON.stringify(state.cartItems))
-    // }, [state.cartItems])
-
 
     const addToCart = item => {
         dispatch({type: ADD_TO_CART, payload: item})

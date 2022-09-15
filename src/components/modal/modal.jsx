@@ -3,17 +3,53 @@ import { appendErrors, useForm } from 'react-hook-form';
 import { schema } from './validations';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Button } from '../button/button';
+import { useState, useContext } from 'react';
+import CartContext from '../../context/cart/CartContext';
 
 export const Modal = ({ setIsOpen })=>{
+    const { clearCart } = useContext(CartContext);
+    const  [ pay, isPay ] = useState(false);
+    const  [ data, setData ] = useState({
+        payment: '',
+        cardNumber: '',
+        expireDate: '',
+        code: '',
+        zipCode: '',
+        address: '',
+        city: '',
+        country: ''
+    });
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: 'onBlur',
         resolver: joiResolver(schema)
     });
 
-    const onSubmit = (data) => {
-        console.log(data);
-        alert('asd');
+    const handleChange = (e) => {
+        setData({
+            ...data,
+            [e.target.name] : e.target.value
+        })
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log('Payment data: ',
+        'payment type: ', data.payment,
+        'card number: ', data.cardNumber,
+        'expire date: ', data.expireDate,
+        'security code: ', data.code,
+        'zip code: ', data.code,
+        'address: ', data.address,
+        'city: ', data.city,
+        'country: ', data.country)
+        const dataString = JSON.stringify(data);
+        console.log(dataString.length)
+        if(dataString.length>150){
+            setIsOpen(false);
+            isPay(true);
+            clearCart();
+        }
     };
 
     return (
@@ -32,34 +68,34 @@ export const Modal = ({ setIsOpen })=>{
                                 <div className={styles.checkbox}>
                                     <div className={styles.select}>
                                         <label htmlFor="">Payment method</label>
-                                        <select {...register('payment')} name="payment" htmlFor="">
+                                        <select {...register('payment')} name="payment" htmlFor="" onChange={handleChange}>
                                             <option name="pay" value="credit">Credit</option>
                                             <option name="pay" value="debit">Debit</option>
                                         </select>
                                     </div>
                                 </div>
                                 <label htmlFor="">Card Number</label>
-                                <input type="number" {...register('cardNumber')} name="cardNumber" error={appendErrors.cardNumber?.message}/>
+                                <input type="number" {...register('cardNumber')} name="cardNumber" onChange={handleChange} error={appendErrors.cardNumber?.message}/>
                                     {errors.cardNumber && <span>{errors.cardNumber?.message}</span>}
                                 <label htmlFor="">Expire date</label>
-                                <input type="text" {...register('expireDate')} name="expireDate" error={appendErrors.expireDate?.message}/>
+                                <input type="text" {...register('expireDate')} name="expireDate" onChange={handleChange} error={appendErrors.expireDate?.message}/>
                                     {errors.expireDate && <span>{errors.expireDate?.message}</span>}
                                 <label htmlFor="">Security code</label>
-                                <input type="number" {...register('code')} name="code" error={appendErrors.code?.message}/>
+                                <input type="number" {...register('code')} name="code" onChange={handleChange} error={appendErrors.code?.message}/>
                                     {errors.code && <span>{errors.code?.message}</span>}
                                     <label htmlFor="">Zip code</label>
-                                <input type="number" {...register('zipCode')} name="zipCode" error={appendErrors.zipCode?.message}/>
+                                <input type="number" {...register('zipCode')} name="zipCode" onChange={handleChange} error={appendErrors.zipCode?.message}/>
                                     {errors.zipCode && <span>{errors.zipCode?.message}</span>}
                                 <h5 className={styles.address}>Add shipment address</h5>
                                 <label htmlFor="">Address</label>
-                                <input type="text" {...register('address')} name="address" error={appendErrors.address?.message}/>
+                                <input type="text" {...register('address')} name="address" onChange={handleChange} error={appendErrors.address?.message}/>
                                     {errors.address && <span>{errors.address?.message}</span>}
                                 <label htmlFor="">City</label>
-                                <input type="text" {...register('city')} name="city" error={appendErrors.city?.message}/>
+                                <input type="text" {...register('city')} name="city" onChange={handleChange} error={appendErrors.city?.message}/>
                                     {errors.city && <span>{errors.city?.message}</span>}
                                 <div className={styles.countrySelect}>
                                     <label htmlFor="">Country</label>
-                                    <select id="country" name="country" {...register('country')}>
+                                    <select id="country" name="country" {...register('country')} onChange={handleChange}>
                                         <option>Select country</option>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Aland Islands</option>
@@ -315,7 +351,7 @@ export const Modal = ({ setIsOpen })=>{
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
-                                <Button action="submit" type="submit" handleClick={(e)=> {e.preventDefault(); onSubmit()}} value="pay" />
+                                <Button action="submit" type="submit" handleClick={onSubmit}>pay</Button>
                             </form>
                         </div>
                     </div>
