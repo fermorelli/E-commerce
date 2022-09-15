@@ -1,10 +1,13 @@
 #h1{
-    color: #333;
+    color: rgb(78, 15, 136);
     text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 30px;
 }
 
 .cartTotal{
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(54, 18, 87);
+    width: 80%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -25,21 +28,13 @@
 }
 
 .none{
-    margin-top: 20px;
-    border: 1px solid;
-    background-color: #888;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    transform: scale(0.9);
+    display: none;
 }
 
 .button{
     margin-top: 20px;
     border: 1px solid;
-    background-color: #333;
+    background-color: #6300d4;
     padding: 10px 15px;
     color: white;
     border-radius: 5px;
@@ -52,7 +47,7 @@
       transform: scale(1.0);
   }
   .button:active{
-      background-color: #F46036;
+      background-color: #a87cfa;
   }
 
 .billingButton{

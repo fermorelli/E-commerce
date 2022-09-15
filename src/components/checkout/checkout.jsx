@@ -4,6 +4,7 @@ import CartItem from '../CartItem/CartItem';
 import CartContext from '../../context/cart/CartContext';
 import { Modal } from '../modal/modal';
 import { Button } from '../button/button';
+import { Link } from 'react-router-dom';
 
 const Checkout = ()=>{
     const { cartItems, clearCart } = useContext(CartContext);
@@ -29,6 +30,9 @@ const Checkout = ()=>{
                     ${totalFormatted}
                 </p>
             </div>
+            <Link to={cartItems.length===0 && '/'}>
+                <button className={cartItems.length===0 ? styles.button : styles.none}>Back</button>
+            </Link>
             <Button handleClick={()=> cartItems.length > 0 ? clearCart():null}>clear cart</Button>
             <Button handleClick={()=> cartItems.length > 0 ? setIsOpen(true):null} >Proceed to payment</Button>
             {isOpen && <Modal setIsOpen={setIsOpen} />}

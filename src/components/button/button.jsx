@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import CartContext from '../../context/cart/CartContext';
 
-export const Button = ({ handleClick, children, action })=>{
+export const Button = ({ handleClick, children, action, reverse })=>{
     const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     const { cartItems } = useContext(CartContext);
     const location = useLocation();
