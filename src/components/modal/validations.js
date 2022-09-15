@@ -5,7 +5,7 @@ export const schema = Joi.object({
     .min(16)
     .max(16)
     .required()
-    .pattern(/[0-9 ]+/)
+    .pattern(new RegExp(/^[0-9]*$/))
     .messages({
         'string.min': 'Card Number must contain 16 digits',
         'string.max': 'Card Number must contain 16 digits',

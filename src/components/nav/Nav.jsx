@@ -10,15 +10,13 @@ function Nav() {
   return (
     <nav>
         <div className={styles.logo}>
-          <i class="fa-brands fa-shopify fa-4x"></i>
-        </div>
-        <ul className={styles.navLinks}>
+            <i class="fa-brands fa-shopify fa-4x"></i>
             <Link to='/'>
-            <li>Shop</li>
+              <span>MARKETPALACE</span>
             </Link>
-        </ul>
+        </div>
         <div className={styles.cart}>
-          <i className="fa-solid fa-shopping-cart" onClick={showHideCart}></i>
+          <i className="fa-solid fa-shopping-cart" id={styles.cart} onClick={showHideCart}></i>
           { cartItems.length > 0 && <div className={styles.itemCount}>
             <div className={styles.cartCounter}>
               <span>{cartItems.length}</span>

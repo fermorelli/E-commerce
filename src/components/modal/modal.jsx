@@ -47,7 +47,7 @@ export const Modal = ({ setIsOpen })=>{
         const dataString = JSON.stringify(data);
         if(dataString.length>150){
             swal('purchase done', 'thank you for your buy', 'success').then(()=>{
-                window.location.href='/shop'
+                window.location.href='/'
             })
             setIsOpen(false);
             clearCart();
