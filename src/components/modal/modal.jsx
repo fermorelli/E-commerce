@@ -5,10 +5,10 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Button } from '../button/button';
 import { useState, useContext } from 'react';
 import CartContext from '../../context/cart/CartContext';
+import swal from 'sweetalert';
 
 export const Modal = ({ setIsOpen })=>{
     const { clearCart } = useContext(CartContext);
-    const  [ pay, isPay ] = useState(false);
     const  [ data, setData ] = useState({
         payment: '',
         cardNumber: '',
@@ -32,6 +32,7 @@ export const Modal = ({ setIsOpen })=>{
         })
     };
 
+
     const onSubmit = (e) => {
         e.preventDefault();
         console.log('Payment data: ',
@@ -44,13 +45,15 @@ export const Modal = ({ setIsOpen })=>{
         'city: ', data.city,
         'country: ', data.country)
         const dataString = JSON.stringify(data);
-        console.log(dataString.length)
         if(dataString.length>150){
+            swal('purchase done', 'thank you for your buy', 'success').then(()=>{
+                window.location.href='/shop'
+            })
             setIsOpen(false);
-            isPay(true);
             clearCart();
         }
     };
+
 
     return (
         <>
