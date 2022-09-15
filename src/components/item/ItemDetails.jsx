@@ -53,7 +53,7 @@ const ItemDetail = ()=> {
                         <Button handleClick={() => {
                             addToCart(item);
                             }}>ADD TO CART</Button>
-                        <Link to={'/shop'}>
+                        <Link to={'/'}>
                             <Button>BACK</Button>
                         </Link>
                     </div>

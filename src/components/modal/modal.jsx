@@ -354,7 +354,9 @@ export const Modal = ({ setIsOpen })=>{
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
-                                <Button action="submit" type="submit" handleClick={onSubmit}>pay</Button>
+                                <div className={styles.buttonContainer}>
+                                    <Button action="submit" type="submit" handleClick={onSubmit}>pay</Button>
+                                </div>
                             </form>
                         </div>
                     </div>

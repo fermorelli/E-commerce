@@ -7,7 +7,7 @@ const ShopItem = ({ item }) => {
     const { addToCart } = useContext(CartContext);
     return (
     <div className={styles.all}>
-        <Link className={styles.routes} to={`/shop/${item.id}`}>
+        <Link className={styles.routes} to={`/${item.id}`}>
             <div className={styles.shopItem}>
                 <img src={item.image} alt="product" />
                 <div className={styles.itemDescription}>

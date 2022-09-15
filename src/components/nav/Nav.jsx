@@ -9,12 +9,11 @@ function Nav() {
 
   return (
     <nav>
-        <h3>Logo</h3>
+        <div className={styles.logo}>
+          <i class="fa-brands fa-shopify fa-4x"></i>
+        </div>
         <ul className={styles.navLinks}>
-            <Link to='/about'>
-            <li>About</li>
-            </Link>
-            <Link to='/shop'>
+            <Link to='/'>
             <li>Shop</li>
             </Link>
         </ul>
