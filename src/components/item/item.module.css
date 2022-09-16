@@ -52,3 +52,16 @@
     background-color: white;
     color: black;
 }
+
+@media screen and (max-width: 1024px) {
+    .itemCard{
+        width: 100%;
+    }
+    .rest img{
+        width: 40%;
+        height: 40%;
+    }
+    .itemCard p{
+        margin-top: 0;
+    }
+}

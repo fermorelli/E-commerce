@@ -125,3 +125,15 @@
     height: 30px;
     margin-top: 5px;
   }
+
+  @media screen and (max-width: 768px) {
+    .modal {
+      width: 400px;
+      height: auto;
+      background: white;
+      color: white;
+      z-index: 500;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    }
+  }
