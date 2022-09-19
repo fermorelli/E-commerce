@@ -8,10 +8,12 @@ export const Button = ({ handleClick, children, action, reverse })=>{
     const { cartItems } = useContext(CartContext);
     const location = useLocation();
     const does = numbers.some((i)=>{return(location.pathname.includes(i))});
+    const categories = ['electronics', 'jewelry', 'clothing']
+    const doesC = categories.some((i)=>{return(location.pathname.includes(i))});
     console.log(does);
 
     return(
-        <button className={cartItems.length > 0 || does ? styles.button : styles.none} onClick={handleClick} action={action}>
+        <button className={cartItems.length > 0 || does || doesC ? styles.button : styles.none} onClick={handleClick} action={action}>
             {children}
         </button>
     )

@@ -2,237 +2,91 @@
     width: 80%;
     margin: 0 auto;
     padding-top: 0;
-}
-
-.shop{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.34);
 }
 
-/* .itemList{
-    list-style-type: none;
-    text-align: left;
-    margin-right: 25px;
+.blur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
 }
 
-.itemLink{
+.electronicsContainer{
+    background-image: url('C:\Users\cilpalacio\Documents\E-commerce\src\assets\rs=h_1000,cg_true.webp');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #EFF2FC;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 30vh;
+    margin: 0 auto;
     text-decoration: none;
-    color: #333;
-    border: 1px solid;
-    border-radius: 2px;
-    display: grid;
-    justify-items: center;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-    box-shadow: 0px 3px 12px -9px #000000;
+    margin-top: 20px;
+    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
 }
 
-.itemLink:hover{
+.electronicsContainer:hover{
     transform: scale(1.01);
 }
 
-.shopGrid{
-    display: grid;
+.jewelryContainer{
+    background-image: url('C:\Users\cilpalacio\Documents\E-commerce\src\assets\maxresdefault.jpg');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #DFC8BF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 30vh;
     margin: 0 auto;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(11, 230px);
-    grid-gap: 10px;
     text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
 }
 
+.jewelryContainer:hover{
+    transform: scale(1.01);
+}
 
-
-.shopGrid a{
+.clothContainer{
+    background-image: url('C:\Users\cilpalacio\Documents\E-commerce\src\assets\stack-clothes-white-background-closeup.jpg');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #DFC8BF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 30vh;
+    margin: 0 auto;
     text-decoration: none;
-    color: #333;
+    margin-top: 20px;
+    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
 }
 
-.itemLink:nth-child(1){
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
+.clothContainer:hover{
+    transform: scale(1.01);
 }
 
-.itemLink:nth-child(2){
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-.itemLink:nth-child(3){
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
-
-.itemLink:nth-child(4){
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
-}
-
-
-.itemLink:nth-child(15){
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-row-end: 5;
-}
-.itemLink:nth-child(16){
-    grid-column-start: 2;
-    grid-row-start: 3;
-    grid-row-end: 5;
-}
-.itemLink:nth-child(17){
-    grid-column-start: 3;
-    grid-row-start: 3;
-    grid-row-end: 5;
-}
-
-
-.itemLink:nth-child(18){
-    grid-column-start: 4;
-    grid-row-start: 3;
-    grid-row-end: 5;
-}
-
-.itemLink:nth-child(19){
-    grid-column-start: 1;
-    grid-row-start: 5;
-    grid-row-end: 7;
-}
-
-.itemLink:nth-child(20){
-    grid-column-start: 2;
-    grid-row-start: 5;
-    grid-row-end: 7;
-}
-
-.itemLink:nth-child(14){
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 5;
-    grid-row-end: 7;
-}
-.itemLink:nth-child(6){
-    grid-column-start: 1;
-    grid-row-start: 7;
-}
-.itemLink:nth-child(7){
-    grid-column-start: 2;
-    grid-row-start: 7;
-}
-.itemLink:nth-child(7) img{
-    height: 80px;
-}
-.itemLink:nth-child(8) img{
-    height: 60px;
-}
-.itemLink:nth-child(5) img, .itemLink:nth-child(9) img, .itemLink:nth-child(12) img{
-    height: 250px;
-}
-
-.itemLink:nth-child(8){
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 7;
-}
-.itemLink:nth-child(10){
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 10;
-    grid-row-end: 12;
-}
-.itemLink:nth-child(11){
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 10;
-    grid-row-end: 12;
-}
-
-.itemLink:nth-child(13) img {
-    transform: scale(1.5);
-    margin: 50px 0;
-}
-.itemLink:nth-child(5){
-    grid-column-start: 1;
-    grid-row-start: 8;
-    grid-row-end: 10;
-}
-.itemLink:nth-child(9){
-    grid-column-start: 2;
-    grid-row-start: 8;
-    grid-row-end: 10;
-}
-.itemLink:nth-child(12){
-    grid-column-start: 3;
-    grid-row-start: 8;
-    grid-row-end: 10;
-}
-.itemLink:nth-child(13){
-    grid-column-start: 4;
-    grid-row-start: 8;
-    grid-row-end: 10;
-}
-
-.itemLink:nth-child(1) img,
-.itemLink:nth-child(2) img,
-.itemLink:nth-child(15) img,
-.itemLink:nth-child(16) img,
-.itemLink:nth-child(17) img,
-.itemLink:nth-child(18) img,
-.itemLink:nth-child(19) img,
-.itemLink:nth-child(20) img {
-    height: 250px;
-}
-
-.shopGrid img:not(.itemLink:nth-child(3) img, .itemLink:nth-child(4) img){
-    max-width: 50%;
-}
-
-.itemLink:nth-child(3) img,
-.itemLink:nth-child(4) img{
-    height: 275px;
-}
-
-.shopGrid h3{
-    font-size: 18px;
-    text-transform: uppercase;
-    padding: 0 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .itemLink{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: #333;
-        border: 1px solid black;
-        border-radius: 2px;
-        box-shadow: 0px 3px 12px -9px #000000;
-        margin-bottom: 20px;
+@media screen and (max-width: 1024px) {
+    .electronicsContainer, .jewelryContainer, .clothContainer{
+        min-width: 350px;
     }
-    .shopGrid img{
-        max-width: 50%;
-    }
-
-    .shopGrid {
-        display: flex;
-        flex-direction: column;
+    .electronicsContainer, .jewelryContainer, .clothContainer h2{
+        font-size: 12px;
     }
 }
-
-@media screen and (max-width: 1600px) {
-
-    .shopGrid {
-        display: flex;
-        flex-wrap: wrap;
-        border: 1px solid red;
-        justify-content: space-around;
-    }
-
-} */

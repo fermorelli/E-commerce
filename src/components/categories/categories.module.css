@@ -1,0 +1,11 @@
+.all{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

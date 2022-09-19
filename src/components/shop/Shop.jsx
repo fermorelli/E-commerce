@@ -1,21 +1,26 @@
 import styles from './shop.module.css';
 import { Link } from 'react-router-dom';
 
-function Shop() {
+const Shop = () => {
 
     return (
-        <>
-            <Link to={'/electronics'}>
-                <div className={styles.asd}>
+        <div className={styles.all}>
+            <Link className={styles.electronicsContainer} to={'/electronics'}>
+                <div className={styles.blur}>
                     <h2>Electronics</h2>
                 </div>
             </Link>
-            <Link to={'/clothing'}>
-                <div className={styles.asd}>
+            <Link className={styles.jewelryContainer} to={'/jewelry'}>
+                <div className={styles.blur}>
+                    <h2>Jewelry</h2>
+                </div>
+            </Link>
+            <Link className={styles.clothContainer} to={'/clothing'}>
+                <div className={styles.blur}>
                     <h2>Clothing</h2>
                 </div>
             </Link>
-        </>
+        </div>
     );
 }
 

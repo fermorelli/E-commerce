@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import styles from '../Electronics/electronics.module.css';
+import styles from '../categories.module.css';
 import { Loader } from '../../loader/loader';
 import ShopItem from '../../shopItem/shopItems';
+import { Button } from '../../button/button';
+import { Link } from 'react-router-dom';
 
 const Electronics = ()=> {
     const [items, setItems] = useState([]);
@@ -23,10 +25,13 @@ const Electronics = ()=> {
     return (
     <>
         {fetching ? <Loader /> : <div className={styles.all}>
-                <div>{items.map((item)=>{
+                <div className={styles.shop}>{items.map((item)=>{
                     return item.category==='electronics' ? <ShopItem key={item._id} item={item} /> : null
                     })}
                 </div>
+                <Link to={'/'}>
+                    <Button>Back</Button>
+                </Link>
             </div>}
         </>
     );
