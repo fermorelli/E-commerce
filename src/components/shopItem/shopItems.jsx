@@ -12,7 +12,7 @@ const ShopItem = ({ item, category}) => {
             <div className={styles.shopItem}>
                 <img src={item.image} alt="product" />
                 <div className={styles.itemDescription}>
-                    <h2>{item.title}</h2>
+                    <h3>{item.title}</h3>
                     <span>${item.price}</span>
                     <p>{item.description.substring(0, 150)}...</p>
                 </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './item.module.css';
 import { Loader } from '../loader/loader';
 import CartContext from '../../context/cart/CartContext';
@@ -29,33 +29,39 @@ const ItemDetail = ()=> {
         fetchItem();
     }, []);
 
+    const navigate = useNavigate();
+
+    const prev = () =>{
+        navigate(-1);
+    }
+
     return (
         <>
         {fetching ? <Loader /> :
         <div className={styles.itemCard}>
-            <h1>{item.title}</h1>
+            <h2 id={styles.h2}>{item.title}</h2>
             <div className={styles.rest}>
                 <img src={item.image} alt="item"></img>
                 <div className={styles.description}>
-                    <p>{item.description}</p>
+                    <p className={styles.itemDescription}>{item.description}</p>
                     <span>price ${item.price}</span>
-                    <div className={styles.rating}>{[1,2,3,4,5].map((rate)=>(
+                    <div className={styles.rating}>
+                        <span>RATING</span>
+                        <div>{[1,2,3,4,5].map((rate)=>(
                         <span>
-                            <i style={{ color: "black"}} className={
+                            <i style={{ color: "blueviolet"}} className={
                                 value + 1 === rate + 0.5
                                 ? "fa-regular fa-star-half-stroke"
                                 : value >= rate
                                 ? "fa-solid fa-star"
                                 : "fa-regular fa-star"}/>
-                        </span>))}
+                        </span>))}</div>
                     </div>
                     <div className={styles.buttonContainer}>
                         <Button handleClick={() => {
                             addToCart(item);
                             }}>ADD TO CART</Button>
-                        <Link to={'/'}>
-                            <Button>BACK</Button>
-                        </Link>
+                        <Button handleClick={prev}>BACK</Button>
                     </div>
                 </div>
             </div>
