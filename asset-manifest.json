@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/E-commerce/static/css/main.c69f1457.css",
-    "main.js": "/E-commerce/static/js/main.e6b8e330.js",
+    "main.css": "/E-commerce/static/css/main.18fd6475.css",
+    "main.js": "/E-commerce/static/js/main.c261b7e0.js",
+    "static/media/stack-clothes-white-background-closeup.jpg": "/E-commerce/static/media/stack-clothes-white-background-closeup.9ed382cb8bfdfc94954e.jpg",
+    "static/media/maxresdefault.jpg": "/E-commerce/static/media/maxresdefault.cdc66f37a06e2dade9c0.jpg",
+    "static/media/rs=h_1000,cg_true.webp": "/E-commerce/static/media/rs=h_1000,cg_true.6a7f2c11c7311c0bf427.webp",
     "index.html": "/E-commerce/index.html",
-    "main.c69f1457.css.map": "/E-commerce/static/css/main.c69f1457.css.map",
-    "main.e6b8e330.js.map": "/E-commerce/static/js/main.e6b8e330.js.map"
+    "main.18fd6475.css.map": "/E-commerce/static/css/main.18fd6475.css.map",
+    "main.c261b7e0.js.map": "/E-commerce/static/js/main.c261b7e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.c69f1457.css",
-    "static/js/main.e6b8e330.js"
+    "static/css/main.18fd6475.css",
+    "static/js/main.c261b7e0.js"
   ]
 }
