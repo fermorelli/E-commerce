@@ -15,7 +15,6 @@ const ShopItem = ({ item, category}) => {
                     <h2>{item.title}</h2>
                     <span>${item.price}</span>
                     <p>{item.description.substring(0, 150)}...</p>
-                    <span>{item.category}</span>
                 </div>
             </div>
         </Link>
