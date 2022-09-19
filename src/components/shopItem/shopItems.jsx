@@ -3,8 +3,9 @@ import { useContext } from 'react';
 import CartContext from '../../context/cart/CartContext';
 import { Link } from 'react-router-dom';
 
-const ShopItem = ({ item }) => {
+const ShopItem = ({ item, category}) => {
     const { addToCart } = useContext(CartContext);
+    console.log(category)
     return (
     <div className={styles.all}>
         <Link className={styles.routes} to={`/${item.id}`}>
@@ -14,6 +15,7 @@ const ShopItem = ({ item }) => {
                     <h2>{item.title}</h2>
                     <span>${item.price}</span>
                     <p>{item.description.substring(0, 150)}...</p>
+                    <span>{item.category}</span>
                 </div>
             </div>
         </Link>
