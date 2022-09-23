@@ -32,7 +32,6 @@ export const Modal = ({ setIsOpen })=>{
         })
     };
 
-
     const onSubmit = (e) => {
         e.preventDefault();
         console.log('Payment data: ',
@@ -46,7 +45,7 @@ export const Modal = ({ setIsOpen })=>{
         'country: ', data.country)
         const dataString = JSON.stringify(data);
         if(dataString.length>150){
-            swal('purchase done', 'thank you for your buy', 'success').then(()=>{
+            swal('Purchase done', 'Thank you for your buy', 'success').then(()=>{
                 window.location.href='/E-commerce'
             })
             setIsOpen(false);
