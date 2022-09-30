@@ -18,20 +18,23 @@ export const schema = Joi.object({
     .required()
     .pattern(new RegExp(/(0?[0-9]|[1-5][0-9])\/([+-]?(?=\.\d|\d)(?:\d+)?(?:\.?\d*))(?:[eE]([+-]?\d+))?/i))
     .custom((value, helper) =>{
-        const month = value.substr(3,4)
-        const day = value.substr(0, 2)
-        if(month > 12 || month <= 0){
+        const date = new Date().getFullYear();
+        const dateLast = date.toString().substring(2,4);
+        const year = value.substr(3,4)
+        const month = value.substr(0, 2)
+        console.log('date: ', date, 'date cortado: ', dateLast)
+        if(month > 12){
             return helper.message({
-                custom: `Invalid date format`,
+                custom: `Month can't be grater than 12`,
             });
-        }else if (day>31 || day === 0){
+        }else if(month <= 0){
             return helper.message({
-                custom: 'Invalid date format',
-            })
-        }else if(month === '02' && day>28){
+                custom: `Month can't be equal to 0`
+            });
+        }else if (year < dateLast){
             return helper.message({
-                custom: 'Invalid date format',
-            })
+                custom: 'Expire year must be equal or grater than current year',
+            });
         }
     })
     .messages({
