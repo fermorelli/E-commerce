@@ -20,7 +20,7 @@
 }
 
 .electronicsContainer{
-    background-image: url('../../assets/rs=h_1000\,cg_true.webp');
+    background-image: url('../../assets/electronics.webp');
     background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@
 }
 
 .jewelryContainer{
-    background-image: url('../../assets/maxresdefault.jpg');
+    background-image: url('../../assets/jewelry.jpg');
     background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@
 }
 
 .clothContainer{
-    background-image: url('../../assets/stack-clothes-white-background-closeup.jpg');
+    background-image: url('../../assets/clothing.jpg');
     background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
