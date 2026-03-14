@@ -3,13 +3,17 @@
     width: 18vw;
     height: fit-content;
     top: 60px;
-    right: 75px;
+    right: calc((100% - 1100px) / 2 + 24px);
     border-radius: 5px;
     background-color: white;
     border: 1px solid gray;
-    padding: 10px 10px 20px 10px;
+    padding: 20px;
     z-index: 401;
     text-transform: uppercase;
+  }
+
+  .cartList {
+    padding-left: 10px;
   }
 
   .cartInnerWrapper {
@@ -29,5 +33,19 @@
     .cartWrapper{
       width: 250px;
       right: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .cartWrapper{
+      position: fixed;
+      top: 72px;
+      right: 5px;
+      width: calc(100% - 32px);
+      max-width: 420px;
+    }
+
+    .cartList {
+      padding-left: 10px;
     }
   }

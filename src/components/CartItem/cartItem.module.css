@@ -15,7 +15,7 @@
   li img {
     height: 100%;
     width: 100px;
-    object-fit: cover;
+    object-fit: contain;
   }
   .cartItem:nth-child(1) {
     border-top: 1px solid gray;

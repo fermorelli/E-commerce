@@ -3,17 +3,20 @@ import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import CartContext from '../../context/cart/CartContext';
 
-export const Button = ({ handleClick, children, action, reverse })=>{
-    const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+export const Button = ({ handleClick, children, type = 'button' })=>{
     const { cartItems } = useContext(CartContext);
     const location = useLocation();
-    const does = numbers.some((i)=>{return(location.pathname.includes(i))});
-    const categories = ['electronics', 'jewelry', 'clothing']
-    const doesC = categories.some((i)=>{return(location.pathname.includes(i))});
-    console.log(does);
+
+    const isProductOrCategoryPage =
+        location.pathname !== '/' ||
+        cartItems.length > 0;
 
     return(
-        <button className={cartItems.length > 0 || does || doesC ? styles.button : styles.none} onClick={handleClick} action={action}>
+        <button
+            type={type}
+            className={isProductOrCategoryPage ? styles.button : styles.none}
+            onClick={handleClick}
+        >
             {children}
         </button>
     )

@@ -1,5 +1,5 @@
 import styles from './modal.module.css';
-import { appendErrors, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { schema } from './validations';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Button } from '../button/button';
@@ -32,8 +32,7 @@ export const Modal = ({ setIsOpen })=>{
         })
     };
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = () => {
         console.log('Payment data: ',
         'payment type: ', data.payment,
         'card number: ', data.cardNumber,
@@ -77,23 +76,23 @@ export const Modal = ({ setIsOpen })=>{
                                     </div>
                                 </div>
                                 <label htmlFor="">Card Number</label>
-                                <input type="number" {...register('cardNumber')} name="cardNumber" onChange={handleChange} error={appendErrors.cardNumber?.message}/>
+                                <input type="number" {...register('cardNumber')} name="cardNumber" onChange={handleChange}/>
                                     {errors.cardNumber && <span>{errors.cardNumber?.message}</span>}
                                 <label htmlFor="">Expire date</label>
-                                <input type="text" {...register('expireDate')} name="expireDate" onChange={handleChange} error={appendErrors.expireDate?.message}/>
+                                <input type="text" {...register('expireDate')} name="expireDate" onChange={handleChange}/>
                                     {errors.expireDate && <span>{errors.expireDate?.message}</span>}
                                 <label htmlFor="">Security code</label>
-                                <input type="number" {...register('code')} name="code" onChange={handleChange} error={appendErrors.code?.message}/>
+                                <input type="number" {...register('code')} name="code" onChange={handleChange}/>
                                     {errors.code && <span>{errors.code?.message}</span>}
                                     <label htmlFor="">Zip code</label>
-                                <input type="number" {...register('zipCode')} name="zipCode" onChange={handleChange} error={appendErrors.zipCode?.message}/>
+                                <input type="number" {...register('zipCode')} name="zipCode" onChange={handleChange}/>
                                     {errors.zipCode && <span>{errors.zipCode?.message}</span>}
                                 <h5 className={styles.address}>Add shipment address</h5>
                                 <label htmlFor="">Address</label>
-                                <input type="text" {...register('address')} name="address" onChange={handleChange} error={appendErrors.address?.message}/>
+                                <input type="text" {...register('address')} name="address" onChange={handleChange}/>
                                     {errors.address && <span>{errors.address?.message}</span>}
                                 <label htmlFor="">City</label>
-                                <input type="text" {...register('city')} name="city" onChange={handleChange} error={appendErrors.city?.message}/>
+                                <input type="text" {...register('city')} name="city" onChange={handleChange}/>
                                     {errors.city && <span>{errors.city?.message}</span>}
                                 <div className={styles.countrySelect}>
                                     <label htmlFor="">Country</label>
@@ -354,7 +353,7 @@ export const Modal = ({ setIsOpen })=>{
                                     </select>
                                 </div>
                                 <div className={styles.buttonContainer}>
-                                    <Button action="submit" type="submit" handleClick={onSubmit}>pay</Button>
+                                    <Button type="submit" handleClick={onSubmit}>pay</Button>
                                 </div>
                             </form>
                         </div>

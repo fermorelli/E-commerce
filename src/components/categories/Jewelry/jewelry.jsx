@@ -26,7 +26,7 @@ const Jewelry = ()=> {
     <>
         {fetching ? <Loader /> : <div className={styles.all}>
                 <div className={styles.shop}>{items.map((item)=>{
-                    return item.category==='jewelery'? <ShopItem key={item._id} item={item} /> : null
+                    return item.category==='jewelery'? <ShopItem key={item.id} item={item} /> : null
                     })}
                 </div>
                 <Link to={'/'}>

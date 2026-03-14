@@ -2,16 +2,23 @@
 nav{
     position: sticky;
     top: 0;
-    width: 100vw;
+    left: 0;
+    width: 100%;
     z-index: 400;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 8vh;
-    background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,9,121,1) 35%, rgba(175,0,255,1) 100%);
     box-shadow: 0px 8px 13px -8px rgba(0,0,0,0.46);
     color: white;
+    box-sizing: border-box;
+  }
+
+  .navInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+    padding: 0 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .logo i{
@@ -28,18 +35,17 @@ nav{
   .logo{
     display: flex;
     justify-content: center;
-    align-content: center;
-    margin-left: 50px;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .cart{
     justify-self: flex-end;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 50px;
   }
 
   .cart i{
@@ -47,10 +53,24 @@ nav{
   }
 
   .cartCounter {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: #E71D36;
-    width: 25px;
-    height: 25px;
-    border-radius: 12.5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
     text-align: center;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navInner{
+      padding: 0 1rem;
+    }
+
+    .logo span{
+      font-size: 0.9rem;
+    }
   }

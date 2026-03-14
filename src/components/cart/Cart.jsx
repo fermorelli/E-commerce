@@ -24,7 +24,7 @@ const Cart = () => {
                     </div>
                     <div className={styles.cartInnerWrapper}>
                         {cartItems.length === 0 ? <h4>Cart is empty</h4> : (
-                        <ul>
+                        <ul className={styles.cartList}>
                             {cartItems.map((item)=> (
                                 <CartItem key={item._id} item={item} />
                             ))}

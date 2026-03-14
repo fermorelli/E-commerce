@@ -26,7 +26,7 @@ const Clothing = ()=> {
     <>
         {fetching ? <Loader /> : <div className={styles.all}>
                 <div className={styles.shop}>{items.map((item)=>{
-                    return item.category===`women's clothing` || item.category=== `men's clothing`? <ShopItem key={item._id} item={item} /> : null
+                    return item.category===`women's clothing` || item.category=== `men's clothing`? <ShopItem key={item.id} item={item} /> : null
                     })}
                 </div>
                 <Link to={'/'}>

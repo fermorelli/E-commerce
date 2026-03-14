@@ -12,7 +12,7 @@ const CartItem = ({ item }) => {
                 <span>{item.title.substring(0, 40)}...</span>
                 <span>${item.price}</span>
             </div>
-            <button onClick={()=>removeItem(item.id)}>
+            <button onClick={() => removeItem(item.id)}>
                 <i className="fa-solid fa-x" ></i>
             </button>
         </li>

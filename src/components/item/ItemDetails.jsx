@@ -39,10 +39,10 @@ const ItemDetail = ()=> {
         <>
         {fetching ? <Loader /> :
         <div className={styles.itemCard}>
-            <h2 id={styles.h2}>{item.title}</h2>
             <div className={styles.rest}>
                 <img src={item.image} alt="item"></img>
                 <div className={styles.description}>
+                    <h2 id={styles.h2}>{item.title}</h2>
                     <p className={styles.itemDescription}>{item.description}</p>
                     <span>price ${item.price}</span>
                     <div className={styles.rating}>

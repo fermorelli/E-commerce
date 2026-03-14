@@ -1,18 +1,21 @@
 .all{
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-top: 0;
+    padding: 2rem 1rem 3rem;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
     font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 3px rgba(0,0,0,1);
+    box-sizing: border-box;
 }
 
 .blur{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 45%;
     height: 100%;
     backdrop-filter: blur(8px);
     text-transform: uppercase;
@@ -28,7 +31,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    max-width: 900px;
     height: 30vh;
     margin: 0 auto;
     text-decoration: none;
@@ -49,7 +53,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    max-width: 900px;
     height: 30vh;
     margin: 0 auto;
     text-decoration: none;
@@ -70,7 +75,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    max-width: 900px;
     height: 30vh;
     margin: 0 auto;
     text-decoration: none;
@@ -83,10 +89,31 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .electronicsContainer, .jewelryContainer, .clothContainer{
-        min-width: 350px;
+    .blur{
+        width: 55%;
     }
-    .electronicsContainer, .jewelryContainer, .clothContainer h2{
-        font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .all{
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .electronicsContainer,
+    .jewelryContainer,
+    .clothContainer{
+        height: 220px;
+        max-width: 100%;
+    }
+
+    .blur{
+        width: 60%;
+    }
+
+    .electronicsContainer h2,
+    .jewelryContainer h2,
+    .clothContainer h2{
+        font-size: 1.1rem;
+        letter-spacing: 1px;
     }
 }

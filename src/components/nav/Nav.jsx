@@ -9,19 +9,21 @@ function Nav() {
 
   return (
     <nav>
-        <div className={styles.logo}>
-            <i class="fa-brands fa-shopify fa-4x"></i>
-            <Link to='/'>
-              <span>MARKETPALACE</span>
-            </Link>
-        </div>
-        <div className={styles.cart}>
-          <i className="fa-solid fa-shopping-cart" id={styles.cart} onClick={showHideCart}></i>
-          { cartItems.length > 0 && <div className={styles.itemCount}>
-            <div className={styles.cartCounter}>
-              <span>{cartItems.length}</span>
-            </div>
-            </div>}
+        <div className={styles.navInner}>
+          <div className={styles.logo}>
+              <i className="fa-brands fa-shopify fa-3x"></i>
+              <Link to='/'>
+                <span>MARKETPALACE</span>
+              </Link>
+          </div>
+          <div className={styles.cart}>
+            <i className="fa-solid fa-shopping-cart" id={styles.cart} onClick={showHideCart}></i>
+            { cartItems.length > 0 && <div className={styles.itemCount}>
+              <div className={styles.cartCounter}>
+                <span>{cartItems.length}</span>
+              </div>
+              </div>}
+          </div>
         </div>
     </nav>
   );

@@ -26,7 +26,7 @@ const Electronics = ()=> {
     <>
         {fetching ? <Loader /> : <div className={styles.all}>
                 <div className={styles.shop}>{items.map((item)=>{
-                    return item.category==='electronics' ? <ShopItem key={item._id} item={item} /> : null
+                    return item.category==='electronics' ? <ShopItem key={item.id} item={item} /> : null
                     })}
                 </div>
                 <Link to={'/'}>

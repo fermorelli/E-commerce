@@ -3,11 +3,13 @@
     text-transform: uppercase;
     font-weight: 400;
     margin-top: 30px;
+    text-align: center;
 }
 
 .cartTotal{
     border-top: 2px solid rgb(54, 18, 87);
-    width: 80%;
+    width: 100%;
+    max-width: 900px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
