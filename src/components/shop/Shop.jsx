@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import electronicsImage from '../../assets/electronics.webp';
 import jewelryImage from '../../assets/jewelry.jpg';
 import clothingImage from '../../assets/clothing.jpg';
+import { getProducts } from '../../utils/productsApi';
 
 const categories = [
   {
@@ -36,8 +37,7 @@ const Shop = () => {
   useEffect(() => {
     const loadProducts = async () => {
       setFetching(true);
-      const response = await fetch('https://fakestoreapi.com/products');
-      const products = await response.json();
+      const products = await getProducts();
       const topRated = [...products].sort((a, b) => (b.rating?.rate || 0) - (a.rating?.rate || 0))[0];
       setFeaturedItem(topRated || null);
       setFetching(false);

@@ -2,6 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 20;
+  padding: 0 20px;
   background: rgba(251, 250, 247, 0.9);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(32, 29, 24, 0.08);
@@ -106,5 +107,11 @@
 
   .cartButton {
     justify-self: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0 12px;
   }
 }

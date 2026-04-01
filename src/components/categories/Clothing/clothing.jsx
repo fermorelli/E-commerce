@@ -4,6 +4,7 @@ import { Loader } from '../../loader/loader';
 import ShopItem from '../../shopItem/shopItems';
 import { Button } from '../../button/button';
 import { Link } from 'react-router-dom';
+import { getProducts } from '../../../utils/productsApi';
 
 const Clothing = () => {
   const [items, setItems] = useState([]);
@@ -11,8 +12,7 @@ const Clothing = () => {
 
   const fetchItems = async () => {
     isFetching(true);
-    const data = await fetch('https://fakestoreapi.com/products');
-    const items1 = await data.json();
+    const items1 = await getProducts();
     setItems(items1);
     isFetching(false);
   };
@@ -40,7 +40,7 @@ const Clothing = () => {
 
           <div className={styles.shop}>
             {items.map((item) => {
-              return item.category === `women's clothing` || item.category === `men's clothing` ? (
+              return item.collection === 'clothing' ? (
                 <ShopItem key={item.id} item={item} />
               ) : null;
             })}

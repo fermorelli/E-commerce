@@ -4,6 +4,7 @@ import styles from './item.module.css';
 import { Loader } from '../loader/loader';
 import CartContext from '../../context/cart/CartContext';
 import { Button } from '../button/button';
+import { getProductById } from '../../utils/productsApi';
 
 const ItemDetail = () => {
   const { addToCart } = useContext(CartContext);
@@ -18,8 +19,7 @@ const ItemDetail = () => {
   useEffect(() => {
     const fetchItem = async () => {
       isFetching(true);
-      const getItem = await fetch(`https://fakestoreapi.com/products/${itemID}`);
-      const item = await getItem.json();
+      const item = await getProductById(itemID);
       setItem(item);
       isFetching(false);
     };
