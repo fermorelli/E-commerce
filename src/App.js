@@ -3,7 +3,7 @@ import Nav from './components/nav/Nav';
 import Shop from './components/shop/Shop';
 import Cart from './components/cart/Cart';
 import ItemDetail from './components/item/ItemDetails';
-import Checkout from "./components/checkout/checkout";
+import Checkout from './components/checkout/checkout';
 import Electronics from './components/categories/Electronics/electronics';
 import Clothing from './components/categories/Clothing/clothing';
 import Jewelry from './components/categories/Jewelry/jewelry';
@@ -13,16 +13,20 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-        <Nav />
-        <Cart />
-          <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/:id" element={<ItemDetail />} />
-            <Route path="/checkout" element={<Checkout />}/>
-            <Route path="/electronics" element={<Electronics />}/>
-            <Route path="/clothing" element={<Clothing />}/>
-            <Route path="/jewelry" element={<Jewelry />}/>
-          </Routes>
+        <div className="app-shell">
+          <Nav />
+          <Cart />
+          <main className="app-main">
+            <Routes>
+              <Route path="/" element={<Shop />} />
+              <Route path="/:id" element={<ItemDetail />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/electronics" element={<Electronics />} />
+              <Route path="/clothing" element={<Clothing />} />
+              <Route path="/jewelry" element={<Jewelry />} />
+            </Routes>
+          </main>
+        </div>
       </div>
     </Router>
   );

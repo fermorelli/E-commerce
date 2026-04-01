@@ -4,28 +4,33 @@ import CartContext from '../../context/cart/CartContext';
 import { useContext } from 'react';
 
 function Nav() {
-
   const { cartItems, showHideCart } = useContext(CartContext);
 
   return (
-    <nav>
-        <div className={styles.navInner}>
-          <div className={styles.logo}>
-              <i className="fa-brands fa-shopify fa-3x"></i>
-              <Link to='/'>
-                <span>MARKETPALACE</span>
-              </Link>
-          </div>
-          <div className={styles.cart}>
-            <i className="fa-solid fa-shopping-cart" id={styles.cart} onClick={showHideCart}></i>
-            { cartItems.length > 0 && <div className={styles.itemCount}>
-              <div className={styles.cartCounter}>
-                <span>{cartItems.length}</span>
-              </div>
-              </div>}
-          </div>
+    <header className={styles.header}>
+      <div className={styles.announcement}>Free shipping over $100. New arrivals updated weekly.</div>
+      <nav className={styles.nav}>
+        <div className={styles.brandBlock}>
+          <Link to="/" className={styles.brand}>
+            <div>
+              <span className={styles.brandName}>MarketPalace</span>
+              <span className={styles.brandTag}>Modern essentials for home, style and gifting</span>
+            </div>
+          </Link>
         </div>
-    </nav>
+
+        <div className={styles.links}>
+          <Link to="/electronics">Electronics</Link>
+          <Link to="/jewelry">Jewelry</Link>
+          <Link to="/clothing">Clothing</Link>
+        </div>
+
+        <button type="button" className={styles.cartButton} onClick={showHideCart}>
+          <span>Bag</span>
+          <span className={styles.cartCount}>{cartItems.length}</span>
+        </button>
+      </nav>
+    </header>
   );
 }
 

@@ -1,119 +1,238 @@
-.all{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 2px 2px 3px rgba(0,0,0,1);
-    box-sizing: border-box;
+.page {
+  display: grid;
+  gap: 34px;
 }
 
-.blur{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    height: 100%;
-    backdrop-filter: blur(8px);
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.electronicsContainer{
-    background-image: url('../../assets/electronics.webp');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #EFF2FC;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    height: 30vh;
-    margin: 0 auto;
-    text-decoration: none;
-    margin-top: 20px;
-    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
+.copy,
+.featuredCard {
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
 
-.electronicsContainer:hover{
-    transform: scale(1.01);
+.copy {
+  display: grid;
+  gap: 20px;
+  align-content: center;
+  min-height: 460px;
+  padding: 44px;
 }
 
-.jewelryContainer{
-    background-image: url('../../assets/jewelry.jpg');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #DFC8BF;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    height: 30vh;
-    margin: 0 auto;
-    text-decoration: none;
-    margin-top: 20px;
-    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
+.kicker,
+.sectionLabel,
+.cardContent span,
+.label,
+.featuredCategory {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.jewelryContainer:hover{
-    transform: scale(1.01);
+.copy h1,
+.collectionsHeader h2,
+.featuredIntro h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.98;
+  font-weight: 400;
 }
 
-.clothContainer{
-    background-image: url('../../assets/clothing.jpg');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #DFC8BF;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    height: 30vh;
-    margin: 0 auto;
-    text-decoration: none;
-    margin-top: 20px;
-    box-shadow: 6px 7px 14px -11px rgba(0,0,0,0.78);
+.copy p,
+.collectionsHeader p,
+.featuredIntro p,
+.cardContent p,
+.featuredMeta p,
+.heroPanel p {
+  color: var(--muted);
+  line-height: 1.75;
 }
 
-.clothContainer:hover{
-    transform: scale(1.01);
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 6px;
 }
 
-@media screen and (max-width: 1024px) {
-    .blur{
-        width: 55%;
-    }
+.primaryLink,
+.secondaryLink {
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-@media screen and (max-width: 768px) {
-    .all{
-        padding: 1.5rem 1rem 2.5rem;
-    }
+.primaryLink {
+  background: var(--accent);
+  color: #f8f7f2;
+}
 
-    .electronicsContainer,
-    .jewelryContainer,
-    .clothContainer{
-        height: 220px;
-        max-width: 100%;
-    }
+.secondaryLink {
+  border: 1px solid var(--border);
+  background: #fff;
+}
 
-    .blur{
-        width: 60%;
-    }
+.collectionsHeader,
+.featuredSection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+  gap: 28px;
+  align-items: start;
+}
 
-    .electronicsContainer h2,
-    .jewelryContainer h2,
-    .clothContainer h2{
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-    }
+.collectionsHeader h2,
+.featuredIntro h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.categoryCard {
+  min-height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.cardContent {
+  height: 100%;
+  display: grid;
+  align-content: end;
+  gap: 12px;
+  padding: 26px;
+  color: #fff;
+}
+
+.cardContent h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+.cardContent p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cardContent strong,
+.featuredFooter em {
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.featuredCard {
+  padding: 24px;
+}
+
+.featuredLink {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.featuredMedia {
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  border-radius: 22px;
+  background: var(--surface-strong);
+}
+
+.featuredMedia img {
+  width: 100%;
+  max-width: 260px;
+  height: 260px;
+  object-fit: contain;
+}
+
+.featuredMeta {
+  display: grid;
+  gap: 14px;
+}
+
+.featuredMeta strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.4rem;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.featuredFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.featuredFooter span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+}
+
+.heroLoader {
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+}
+
+.heroSpinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(31, 75, 67, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 999px;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .collectionsHeader,
+  .featuredSection,
+  .grid,
+  .featuredLink {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .copy,
+  .heroVisual,
+  .featuredCard {
+    padding: 20px;
+  }
+
+  .copy {
+    min-height: auto;
+  }
 }

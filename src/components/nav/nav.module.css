@@ -1,76 +1,110 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(251, 250, 247, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(32, 29, 24, 0.08);
+}
 
-nav{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 400;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,9,121,1) 35%, rgba(175,0,255,1) 100%);
-    box-shadow: 0px 8px 13px -8px rgba(0,0,0,0.46);
-    color: white;
-    box-sizing: border-box;
+.announcement {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(32, 29, 24, 0.06);
+}
+
+.nav {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+}
+
+.brandBlock {
+  min-width: 0;
+}
+
+.brandName {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.brandTag {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.links {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  justify-content: center;
+}
+
+.links a {
+  color: var(--muted);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 160ms ease;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.cartButton {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 14px 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: var(--text);
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cartCount {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--surface-strong);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    grid-template-columns: 1fr;
+    padding: 16px 0;
   }
 
-  .navInner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 64px;
-    padding: 0 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
+  .links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
-  .logo i{
-    color: white;
+  .cartButton {
+    justify-self: flex-start;
   }
-  .logo a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    align-self: center;
-    margin-left: 5px;
-  }
-
-  .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .cart{
-    justify-self: flex-end;
-    width: auto;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cart i{
-    cursor: pointer;
-  }
-
-  .cartCounter {
-    margin-bottom: 20px;
-    background-color: #E71D36;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 768px) {
-    .navInner{
-      padding: 0 1rem;
-    }
-
-    .logo span{
-      font-size: 0.9rem;
-    }
-  }
+}
